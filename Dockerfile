@@ -13,6 +13,8 @@ RUN dotnet restore
 # Копируем остальной код
 COPY . ./
 
+COPY EventTrackingSystem.Api/EventTracking.db EventTrackingSystem.Api
+
 # Публикуем в папку /out
 RUN dotnet publish EventTrackingSystem.Api/EventTrackingSystem.Api.csproj -c Release -o /out
 
